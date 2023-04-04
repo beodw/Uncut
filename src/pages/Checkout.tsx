@@ -34,7 +34,7 @@ const Checkout = () => {
       ])
     );
     dispatch(setCart([]));
-    navigate("/orders");
+    navigate("/account/orders");
   };
 
   return (
@@ -749,14 +749,14 @@ const Checkout = () => {
                 cart.map((item, idx) => (
                   <div
                     key={idx}
-                    className="border mt-4 p-4 flex items-start justify-start w-full bg-green-500"
+                    className="border mt-4 p-4 flex items-start justify-start w-full"
                   >
                     <img
                       src={item.image}
                       alt="TODO"
                       className="h-full w-24 object-cover object-center mr-2"
                     />
-                    <div className="flex flex-col bg-red-400">
+                    <div className="flex flex-col">
                       <p className="mb-2">Jelly Donut Holes (4 Pack)</p>
                       <p className="mb-2 text-gray-500 text-sm">
                         Weight: 100mg
