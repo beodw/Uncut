@@ -321,7 +321,7 @@ const NavBar = () => {
                                         >
                                           <div className="w-4 h-4 mr-2">
                                             <img
-                                              src={`/images/icons/ ${menuItem.icon}`}
+                                              src={`/images/icons/${menuItem.icon}`}
                                             />
                                           </div>
 
