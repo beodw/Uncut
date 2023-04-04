@@ -1,8 +1,8 @@
 {
     "items": [
         {
-            "title": "Product A",
-            "subtitle": "A great product for everyday use",
+            "title": "Herb-blended Pre-roll",
+            "subtitle": "Active Day",
             "price": 19.99,
             "status": "New Arrival",
             "rating": 4.5,
@@ -10,8 +10,8 @@
             "image": "/images/products/active_day.jpg"
         },
         {
-            "title": "Product B",
-            "subtitle": "The perfect gift for any occasion",
+            "title": "Herb-blended Pre-roll",
+            "subtitle": "Peaceful Night",
             "price": 29.99,
             "status": "Out of stock",
             "rating": 4.2,
@@ -19,8 +19,8 @@
             "image": "/images/products/peaceful_night.jpg"
         },
         {
-            "title": "Product C",
-            "subtitle": "A must-have for your collection",
+            "title": "Strawberry Frosted Donut",
+            "subtitle": "25mg",
             "price": 49.99,
             "status": "Out of stock",
             "rating": 4.8,
@@ -28,17 +28,17 @@
             "image": "/images/products/strawberry_frosted.jpg"
         },
         {
-            "title": "Product C",
-            "subtitle": "A must-have for your collection",
-            "price": 49.99,
+            "title": "Chocoalte Chip Muffin",
+            "subtitle": "25mg",
+            "price": 45,
             "status": "Out of stock",
             "rating": 4.8,
             "number_in_stock": 5,
             "image": "/images/products/coco_chip.jpg"
         },
         {
-            "title": "Product A",
-            "subtitle": "A great product for everyday use",
+            "title": "Pecan Sticky Bun",
+            "subtitle": "25mg",
             "price": 19.99,
             "status": "New Arrival",
             "rating": 4.5,
@@ -47,7 +47,7 @@
         },
         {
             "title": "Product B",
-            "subtitle": "The perfect gift for any occasion",
+            "subtitle": "25mg",
             "price": 29.99,
             "status": "Out of stock",
             "rating": 4.2,
@@ -55,8 +55,8 @@
             "image": "/images/products/jelly_donut.jpg"
         },
         {
-            "title": "Product C",
-            "subtitle": "A must-have for your collection",
+            "title": "Jelly Donut Holes",
+            "subtitle": "25mg",
             "price": 49.99,
             "status": "Out of stock",
             "rating": 4.8,
@@ -64,8 +64,8 @@
             "image": "/images/products/jelly_donut.jpg"
         },
         {
-            "title": "Product C",
-            "subtitle": "A must-have for your collection",
+            "title": "Jelly Donut Holes",
+            "subtitle": "25mg",
             "price": 49.99,
             "status": "Out of stock",
             "rating": 4.8,

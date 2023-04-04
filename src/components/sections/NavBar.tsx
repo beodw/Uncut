@@ -177,20 +177,18 @@ const NavBar = () => {
 
         <header className="relative z-10">
           <nav aria-label="Top">
-            <div className="bg-black-500">
+            <div className="bg-black-500 hidden lg:block">
               <div className="mx-auto flex h-10 max-w-7xl items-center justify-between px-8">
-                <form>
-                  <div className="flex">
-                    <div className="h-6 w-6">
-                      <img src="/images/icons/truck.png" />
-                    </div>
-                    <div className="text-white ml-4 uppercase">
-                      Free in-store pickup
-                    </div>
+                <div className="hidden lg:flex">
+                  <div className="h-6 w-6">
+                    <img src="/images/icons/truck.png" />
                   </div>
-                </form>
+                  <div className="text-white ml-4 uppercase">
+                    Free in-store pickup
+                  </div>
+                </div>
 
-                <div className="flex justify-between space-x-24">
+                <div className="hidden lg:flex justify-between space-x-24">
                   <div className="flex text-white space-x-12">
                     <a href="">Pick Up</a>
                     <a href="">FAQ</a>
@@ -223,7 +221,7 @@ const NavBar = () => {
               <div className="mx-auto max-w-7xl px-8">
                 <div>
                   <div className="flex h-16 items-center justify-between">
-                    <div className="hidden lg:flex lg:flex-1 lg:items-center">
+                    <div className="flex-1 lg:items-center">
                       <a href="/">
                         <img
                           className="h-8 w-auto"
@@ -252,22 +250,8 @@ const NavBar = () => {
                         </svg>
                       </button>
                     </div>
-                    <a href="#" className="lg:hidden">
-                      <img
-                        src="/images/icons/logo.png"
-                        alt=""
-                        className="h-8 w-auto"
-                      />
-                    </a>
 
                     <div className="flex flex-1 items-center justify-end">
-                      <a
-                        href="#"
-                        className="hidden text-sm font-medium text-white lg:block"
-                      >
-                        Search
-                      </a>
-
                       <div className="flex items-center lg:ml-8">
                         <a href="#" className="p-2 text-white lg:hidden">
                           <span className="sr-only">Help</span>
@@ -337,7 +321,7 @@ const NavBar = () => {
                                         >
                                           <div className="w-4 h-4 mr-2">
                                             <img
-                                              src={`/images/icons/${menuItem.icon}`}
+                                              src={`/images/icons/ ${menuItem.icon}`}
                                             />
                                           </div>
 

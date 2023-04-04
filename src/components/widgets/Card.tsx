@@ -32,10 +32,10 @@ const Card = ({ item, index }) => {
           className="h-full w-full object-cover object-center"
         />
       </div>
-      <div className="pt-10 text-center border border-gray-200">
+      <div className="pt-10 text-center border border-gray-200 ">
         <h4 className="text-gray-500">Pre-rolls</h4>
         <h2 className="text-lg text-gray-900 font-bold">{item.title}</h2>
-        <h2 className="text-lg text-gray-900 font-bold truncate">
+        <h2 className="text-lg text-gray-900 font-bold line-clamp-1">
           ({item.subtitle})
         </h2>
         <div className="flex flex-col items-center">

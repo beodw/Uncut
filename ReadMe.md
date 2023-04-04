@@ -8,3 +8,5 @@ Steps to run locally:
 4. Run npm run dev
 
 Hosted link:
+
+https://uncut-ten.vercel.app/
