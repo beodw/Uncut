@@ -4,10 +4,10 @@ import {Products, ShoppingCart, Checkout, Orders } from "../pages";
 const routes = [
 	// root path for entry into application
 	{path: '/', exact: true, component: Products},
-	{path: '/products', exact: true, component: Products},
-	{path: '/shopping-cart', exact: true, component: ShoppingCart},
-	{path: '/checkout', exact: true, component: Checkout},
-	{path: '/orders', exact: true, component: Orders},
+	{path: '/home/products', exact: true, component: Products},
+	{path: '/product/shopping-cart', exact: true, component: ShoppingCart},
+	{path: '/product/shopping-cart/checkout', exact: true, component: Checkout},
+	{path: '/account/orders', exact: true, component: Orders},
 	
 
 ];

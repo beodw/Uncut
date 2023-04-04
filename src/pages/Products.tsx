@@ -1,9 +1,14 @@
 import React from "react";
-import data from "../../data.json";
 import Card from "../components/widgets/Card";
 import SortBy from "../components/widgets/SortBy";
+import { useSelector } from "react-redux";
+import { appState } from "../redux/store";
 
-function Products() {
+const Products = () => {
+  const products: Array<Object> = useSelector(
+    (state: appState) => state.appSlice.products
+  );
+
   return (
     <>
       <div className="flex items-center justify-between w-full mb-12">
@@ -12,12 +17,16 @@ function Products() {
       </div>
 
       <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-        {data.items.map((item, idx) => (
-          <Card key={idx} item={item} />
-        ))}
+        {products.length !== 0 ? (
+          products.map((item, idx) => (
+            <Card key={idx} item={item} index={idx} />
+          ))
+        ) : (
+          <h2>No Products</h2>
+        )}
       </div>
     </>
   );
-}
+};
 
 export default Products;

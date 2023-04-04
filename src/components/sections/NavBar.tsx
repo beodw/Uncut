@@ -1,7 +1,30 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { appState } from "../../redux/store";
+import { useNavigate } from "react-router-dom";
+
+import { Fragment } from "react";
+import { Menu, Transition } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+
 const NavBar = () => {
+  const menuItems = [
+    { name: "Account", icon: "user.png" },
+    { name: "Orders", icon: "layout-list.png" },
+    { name: "Log out", icon: "log-out.png" },
+  ];
+  const cart: Array<Object> = useSelector(
+    (state: appState) => state.appSlice.cart
+  );
+
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(" ");
+  }
+
+  const navigate = useNavigate();
+
   return (
-    <div className="bg-white">
+    <div className="bg-blue-500">
       {/* <div className="relative z-40 lg:hidden" role="dialog" aria-modal="true">
         <div className="fixed inset-0 bg-black bg-opacity-25"></div>
 
@@ -139,10 +162,10 @@ const NavBar = () => {
           </div>
         </div>
       </div> */}
-      <div className="relative bg-gray-900">
-        <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
+      <div className="relative bg-black">
+        {/* <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
           <img
-            src="https://tailwindui.com/img/ecommerce-images/home-page-01-hero-full-width.jpg"
+            src=""
             alt=""
             className="h-full w-full object-cover object-center"
           />
@@ -150,73 +173,63 @@ const NavBar = () => {
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-gray-900 opacity-50"
-        ></div>
+        ></div> */}
 
         <header className="relative z-10">
           <nav aria-label="Top">
-            <div className="bg-gray-900">
-              <div className="mx-auto flex h-10 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <div className="bg-black-500">
+              <div className="mx-auto flex h-10 max-w-7xl items-center justify-between px-8">
                 <form>
-                  <div>
-                    <label className="sr-only">Currency</label>
-                    <div className="group relative -ml-2 rounded-md border-transparent bg-gray-900 focus-within:ring-2 focus-within:ring-white">
-                      <select
-                        id="desktop-currency"
-                        name="currency"
-                        className="flex items-center rounded-md border-transparent bg-gray-900 bg-none py-0.5 pl-2 pr-5 text-sm font-medium text-white focus:border-transparent focus:outline-none focus:ring-0 group-hover:text-gray-100"
-                      >
-                        <option>CAD</option>
-
-                        <option>USD</option>
-
-                        <option>AUD</option>
-
-                        <option>EUR</option>
-
-                        <option>GBP</option>
-                      </select>
-                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center">
-                        <svg
-                          className="h-5 w-5 text-gray-300"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden="true"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </div>
+                  <div className="flex">
+                    <div className="h-6 w-6">
+                      <img src="/images/icons/truck.png" />
+                    </div>
+                    <div className="text-white ml-4 uppercase">
+                      Free in-store pickup
                     </div>
                   </div>
                 </form>
 
-                <div className="flex items-center space-x-6">
-                  <a
-                    href="#"
-                    className="text-sm font-medium text-white hover:text-gray-100"
-                  >
-                    Sign in
-                  </a>
-                  <a
-                    href="#"
-                    className="text-sm font-medium text-white hover:text-gray-100"
-                  >
-                    Create an account
-                  </a>
+                <div className="flex justify-between space-x-24">
+                  <div className="flex text-white space-x-12">
+                    <a href="">Pick Up</a>
+                    <a href="">FAQ</a>
+                    <a
+                      href="tel:(617) 775-7865"
+                      className="flex items-center space-x-2"
+                    >
+                      <div className="h-4 w-4">
+                        <img src="/images/icons/phone.png" />
+                      </div>
+                      <span> (617) 775-7865</span>
+                    </a>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <button className="h-6 w-6">
+                      <img src="/images/icons/facebook.png" />
+                    </button>
+                    <button className="h-6 w-6">
+                      <img src="/images/icons/twitter.png" />
+                    </button>
+                    <button className="h-6 w-6">
+                      <img src="/images/icons/instagram.png" />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div className="bg-white shadow-lg">
-              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="mx-auto max-w-7xl px-8">
                 <div>
                   <div className="flex h-16 items-center justify-between">
                     <div className="hidden lg:flex lg:flex-1 lg:items-center">
                       <a href="/">
-                        <img className="h-8 w-auto" src="logo.png" alt="" />
+                        <img
+                          className="h-8 w-auto"
+                          src="/images/icons/logo.png"
+                          alt=""
+                        />
                       </a>
                     </div>
 
@@ -240,7 +253,11 @@ const NavBar = () => {
                       </button>
                     </div>
                     <a href="#" className="lg:hidden">
-                      <img src="logo.png" alt="" className="h-8 w-auto" />
+                      <img
+                        src="/images/icons/logo.png"
+                        alt=""
+                        className="h-8 w-auto"
+                      />
                     </a>
 
                     <div className="flex flex-1 items-center justify-end">
@@ -270,29 +287,73 @@ const NavBar = () => {
                           </svg>
                         </a>
 
-                        <button className="relative w-6 h-6">
-                          <div className="rounded-full bg-red-500 text-white flex justify-center items-center w-2 h-2 absolute p-2 text-xs -top-2 -right-2">
-                            5
-                          </div>
-                          <img src="shopping-bag.png" />
+                        <button
+                          onClick={() => navigate("/product/shopping-cart")}
+                          className="relative w-6 h-6"
+                        >
+                          {cart.length !== 0 && (
+                            <div className="rounded-full bg-red-500 text-white flex justify-center items-center w-2 h-2 absolute p-2 text-xs -top-2 -right-2">
+                              {cart.length}
+                            </div>
+                          )}
+
+                          <img src="/images/icons/shopping-bag.png" />
                         </button>
 
                         <div className="ml-4 flow-root lg:ml-8">
-                          <a
-                            href="#"
-                            className="group -m-2 flex items-center p-2"
+                          <Menu
+                            as="div"
+                            className="relative inline-block text-left"
                           >
-                            <button className="rounded-full border border-black flex items-center justify-center w-6 h-6 p-[4px]">
-                              <img src="user.png" />
-                            </button>
+                            <Menu.Button className="rounded-full border border-black flex items-center justify-center w-6 h-6 p-[4px]">
+                              <img src="/images/icons/user.png" />
+                            </Menu.Button>
 
-                            <span className="ml-2 text-sm font-medium text-white">
-                              0
-                            </span>
-                            <span className="sr-only">
-                              items in cart, view bag
-                            </span>
-                          </a>
+                            <Transition
+                              as={Fragment}
+                              enter="transition ease-out duration-100"
+                              enterFrom="transform opacity-0 scale-95"
+                              enterTo="transform opacity-100 scale-100"
+                              leave="transition ease-in duration-75"
+                              leaveFrom="transform opacity-100 scale-100"
+                              leaveTo="transform opacity-0 scale-95"
+                            >
+                              <Menu.Items className="absolute right-0 z-10 mt-2 origin-top-right divide-y divide-gray-100 bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                <div className="py-1">
+                                  {menuItems.map((menuItem, idx) => (
+                                    <Menu.Item key={idx}>
+                                      {({ active }) => (
+                                        <div
+                                          onClick={() =>
+                                            menuItem.name === "Orders" &&
+                                            navigate("/account/orders")
+                                          }
+                                          className={`flex w-full justify-start items-center hover:text-green-500 hover:fill-green-500 ${classNames(
+                                            active
+                                              ? "bg-gray-100 text-gray-900"
+                                              : "text-gray-700",
+                                            "block px-4 py-2 text-sm"
+                                          )}`}
+                                        >
+                                          <div className="w-4 h-4 mr-2">
+                                            <img
+                                              src={`/images/icons/${menuItem.icon}`}
+                                            />
+                                          </div>
+
+                                          <a href="#">{menuItem.name}</a>
+                                        </div>
+                                      )}
+                                    </Menu.Item>
+                                  ))}
+                                </div>
+                              </Menu.Items>
+                            </Transition>
+                          </Menu>
+
+                          <span className="sr-only">
+                            items in cart, view bag
+                          </span>
                         </div>
                       </div>
                     </div>

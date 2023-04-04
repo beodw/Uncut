@@ -12,7 +12,7 @@ import { routes } from "../../routes";
 
 const Content = () => {
   return (
-    <div className="my-16 grow mx-auto w-full max-w-7xl flex flex-col items-start align-baseline">
+    <div className="my-16 grow mx-auto w-full max-w-7xl flex flex-col items-start align-baseline px-8">
       <Routes>
         {routes.map((route, idx) => {
           return (

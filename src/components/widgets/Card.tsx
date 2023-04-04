@@ -1,39 +1,51 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { setCart } from "../../redux/appSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { appState } from "../../redux/store";
 
-const Card = ({ item }) => {
+const Card = ({ item, index }) => {
   let isOutOfStock: boolean = item.status !== "New Arrival";
 
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const cart: Array<Object> = useSelector(
+    (state: appState) => state.appSlice.cart
+  );
+
+  const addToCart = () => {
+    dispatch(setCart([...cart, item]));
+  };
 
   return (
     <div className="group relative">
       <div className="aspect-h-1 aspect-w-1 overflow-hidden group-hover:opacity-75">
         <div
           className={`absolute top-4 left-4 text-white ${
-            isOutOfStock ? "bg-orange-400" : "bg-teal-400"
+            isOutOfStock ? "bg-orange-400" : "bg-green-400"
           } p-2`}
         >
           {item.status}
         </div>
         <img
-          src="./img1.jpg"
+          src={item.image}
           alt="TODO"
           className="h-full w-full object-cover object-center"
         />
       </div>
       <div className="pt-10 text-center border border-gray-200">
         <h4 className="text-gray-500">Pre-rolls</h4>
-        <h2 className="text-lg text-gray-900 font-bold">
-          Herb-blended Pre-roll
+        <h2 className="text-lg text-gray-900 font-bold">{item.title}</h2>
+        <h2 className="text-lg text-gray-900 font-bold truncate">
+          ({item.subtitle})
         </h2>
-        <h2 className="text-lg text-gray-900 font-bold">(Active Day)</h2>
         <div className="flex flex-col items-center">
-          <p className="text-base font-medium text-gray-900 py-2">$149</p>
-          <p className="sr-only">5 out of 5 stars</p>
+          <p className="text-base font-medium text-gray-900 py-2">
+            ${item.price}
+          </p>
+          <p className="sr-only">{item.rating} out of 5 stars</p>
           <div className="flex items-center justify-center">
             <svg
-              className="text-yellow-400 h-5 w-5 flex-shrink-0"
+              className="text-green-400 h-5 w-5 flex-shrink-0"
               viewBox="0 0 20 20"
               fill="currentColor"
               aria-hidden="true"
@@ -46,7 +58,7 @@ const Card = ({ item }) => {
             </svg>
 
             <svg
-              className="text-yellow-400 h-5 w-5 flex-shrink-0"
+              className="text-green-400 h-5 w-5 flex-shrink-0"
               viewBox="0 0 20 20"
               fill="currentColor"
               aria-hidden="true"
@@ -59,7 +71,7 @@ const Card = ({ item }) => {
             </svg>
 
             <svg
-              className="text-yellow-400 h-5 w-5 flex-shrink-0"
+              className="text-green-400 h-5 w-5 flex-shrink-0"
               viewBox="0 0 20 20"
               fill="currentColor"
               aria-hidden="true"
@@ -72,7 +84,7 @@ const Card = ({ item }) => {
             </svg>
 
             <svg
-              className="text-yellow-400 h-5 w-5 flex-shrink-0"
+              className="text-green-400 h-5 w-5 flex-shrink-0"
               viewBox="0 0 20 20"
               fill="currentColor"
               aria-hidden="true"
@@ -85,7 +97,7 @@ const Card = ({ item }) => {
             </svg>
 
             <svg
-              className="text-yellow-400 h-5 w-5 flex-shrink-0"
+              className="text-gray-400 h-5 w-5 flex-shrink-0"
               viewBox="0 0 20 20"
               fill="currentColor"
               aria-hidden="true"
@@ -101,7 +113,7 @@ const Card = ({ item }) => {
         </div>
         <div className="p-4 ">
           <button
-            onClick={() => navigate("/shopping-cart")}
+            onClick={addToCart}
             className="bg-black text-white p-2 w-full"
           >
             Add to Cart

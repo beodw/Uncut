@@ -1,8 +1,41 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import ProductType from "../types/ProductType";
+import { appState } from "../redux/store";
+import { setCart, setOrders } from "../redux/appSlice";
+import OrderType from "../types/OrderType";
 
 const Checkout = () => {
   const navigate = useNavigate();
+
+  const cart: Array<ProductType> = useSelector(
+    (state: appState) => state.appSlice.cart
+  );
+
+  const orders: Array<OrderType> = useSelector(
+    (state: appState) => state.appSlice.orders
+  );
+
+  const dispatch = useDispatch();
+
+  const checkout = () => {
+    //check some form logic
+    dispatch(
+      setOrders([
+        ...orders,
+        {
+          image: cart[cart.length - 1].image,
+          number: "number",
+          pickup_date: "Apr 2, 2022 | 2:00 PM",
+          amount: "$45",
+          status: "Awaiting Pick-up",
+        },
+      ])
+    );
+    dispatch(setCart([]));
+    navigate("/orders");
+  };
 
   return (
     <div className="bg-white">
@@ -667,20 +700,19 @@ const Checkout = () => {
 
             <div className="w-full justify-between mt-6 grid grid-cols-2 gap-2">
               <div className="flex flex-col">
-                <h2 className="mb-2">Time</h2>
+                <h2 className="mb-2">Date</h2>
                 <input
-                  id="town-city-input"
-                  type="text"
-                  autoComplete="email"
+                  id="date-input"
+                  type="date"
                   required
                   className="w-full min-w-0 appearance-none border border-gray-300 bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500"
                 />
               </div>
               <div className="flex flex-col">
-                <h2 className="mb-2">Date</h2>
+                <h2 className="mb-2">Time</h2>
                 <input
-                  id="town-city-input"
-                  type="text"
+                  id="time-input"
+                  type="time"
                   autoComplete="email"
                   required
                   className="w-full min-w-0 appearance-none border border-gray-300 bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500"
@@ -689,12 +721,12 @@ const Checkout = () => {
             </div>
 
             <textarea
-              className="border w-full my-8 h-32 resize-none outline-green-600 outline-[1px] p-2"
-              placeholder="blah blah blah blah and marketing emails"
+              className="border w-full my-8 h-32 resize-none outline-green-400 outline-[1px] p-2"
+              placeholder=""
             />
 
             <div className="w-full justify-end items-center flex">
-              <button className="bg-green-600 text-white w-1/2 py-2">
+              <button className="bg-green-400 text-white w-1/2 py-2">
                 Place Order
               </button>
             </div>
@@ -713,26 +745,29 @@ const Checkout = () => {
 
               <hr />
 
-              {[1, 2, 3, 4].map((item, idx) => (
-                <div
-                  key={idx}
-                  className="border mt-4 p-4 flex items-start justify-start w-full bg-green-500"
-                >
-                  <img
-                    src="./img1.jpg"
-                    alt="TODO"
-                    className="h-full w-24 object-cover object-center mr-2"
-                  />
-                  <div className="flex flex-col bg-red-400">
-                    <p className="mb-2">Jelly Donut Holes (4 Pack)</p>
-                    <p className="mb-2 text-gray-500 text-sm">Weight: 100mg</p>
-                    <p className="mb-2 text-gray-500 text-sm">
-                      Category: Bakery
-                    </p>
-                    <p className="mb-2 text-gray-500 text-sm">Quantity: 1</p>
+              {cart.length !== 0 &&
+                cart.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="border mt-4 p-4 flex items-start justify-start w-full bg-green-500"
+                  >
+                    <img
+                      src={item.image}
+                      alt="TODO"
+                      className="h-full w-24 object-cover object-center mr-2"
+                    />
+                    <div className="flex flex-col bg-red-400">
+                      <p className="mb-2">Jelly Donut Holes (4 Pack)</p>
+                      <p className="mb-2 text-gray-500 text-sm">
+                        Weight: 100mg
+                      </p>
+                      <p className="mb-2 text-gray-500 text-sm">
+                        Category: Bakery
+                      </p>
+                      <p className="mb-2 text-gray-500 text-sm">Quantity: 1</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
 
               <hr />
               <div className="border-b-[1px] py-4">
@@ -751,7 +786,7 @@ const Checkout = () => {
                   <div className="ml-4 flex-shrink-0">
                     <button
                       type="submit"
-                      className="flex w-full items-center justify-center rounded-md border border-transparent bg-green-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                      className="flex w-full items-center justify-center rounded-md border border-transparent bg-green-400 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
                     >
                       Apply
                     </button>
@@ -827,9 +862,9 @@ const Checkout = () => {
               </dl>
               <div className="mt-6">
                 <button
-                  onClick={() => navigate("/orders")}
+                  onClick={checkout}
                   type="submit"
-                  className="w-full rounded-md border border-transparent bg-green-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                  className="w-full rounded-md border border-transparent bg-green-400 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-50"
                 >
                   Checkout
                 </button>

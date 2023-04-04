@@ -6,7 +6,8 @@
             "price": 19.99,
             "status": "New Arrival",
             "rating": 4.5,
-            "number_in_stock": 10
+            "number_in_stock": 10,
+            "image": "/images/products/active_day.jpg"
         },
         {
             "title": "Product B",
@@ -14,31 +15,35 @@
             "price": 29.99,
             "status": "Out of stock",
             "rating": 4.2,
-            "number_in_stock": 0
+            "number_in_stock": 0,
+            "image": "/images/products/peaceful_night.jpg"
         },
         {
             "title": "Product C",
             "subtitle": "A must-have for your collection",
             "price": 49.99,
-            "status": "In stock",
+            "status": "Out of stock",
             "rating": 4.8,
-            "number_in_stock": 5
+            "number_in_stock": 5,
+            "image": "/images/products/strawberry_frosted.jpg"
         },
         {
             "title": "Product C",
             "subtitle": "A must-have for your collection",
             "price": 49.99,
-            "status": "In stock",
+            "status": "Out of stock",
             "rating": 4.8,
-            "number_in_stock": 5
+            "number_in_stock": 5,
+            "image": "/images/products/coco_chip.jpg"
         },
         {
             "title": "Product A",
             "subtitle": "A great product for everyday use",
             "price": 19.99,
-            "status": "In stock",
+            "status": "New Arrival",
             "rating": 4.5,
-            "number_in_stock": 10
+            "number_in_stock": 10,
+            "image": "/images/products/pecan.jpg"
         },
         {
             "title": "Product B",
@@ -46,23 +51,26 @@
             "price": 29.99,
             "status": "Out of stock",
             "rating": 4.2,
-            "number_in_stock": 0
+            "number_in_stock": 0,
+            "image": "/images/products/jelly_donut.jpg"
         },
         {
             "title": "Product C",
             "subtitle": "A must-have for your collection",
             "price": 49.99,
-            "status": "In stock",
+            "status": "Out of stock",
             "rating": 4.8,
-            "number_in_stock": 5
+            "number_in_stock": 5,
+            "image": "/images/products/jelly_donut.jpg"
         },
         {
             "title": "Product C",
             "subtitle": "A must-have for your collection",
             "price": 49.99,
-            "status": "In stock",
+            "status": "Out of stock",
             "rating": 4.8,
-            "number_in_stock": 5
+            "number_in_stock": 5,
+            "image": "/images/products/jelly_donut.jpg"
         }
     ]
 }
