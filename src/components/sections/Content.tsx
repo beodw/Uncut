@@ -1,10 +1,13 @@
 import React from "react";
-import Breadcrumb from "../common/Breadcrumb";
+import { Orders, ShoppingCart, Products, Checkout } from "../../pages";
 
 const Content = () => {
   return (
-    <div className="grow mx-auto w-full bg-red-500 max-w-7xl flex flex-col items-start align-baseline">
-      <Breadcrumb />
+    <div className="my-16 grow mx-auto w-full max-w-7xl flex flex-col items-start align-baseline">
+      {/* <Products /> */}
+      {/* <ShoppingCart /> */}
+      {/* <Orders /> */}
+      <Checkout />
     </div>
   );
 };

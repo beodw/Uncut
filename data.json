@@ -1,0 +1,68 @@
+{
+    "items": [
+        {
+            "title": "Product A",
+            "subtitle": "A great product for everyday use",
+            "price": 19.99,
+            "status": "New Arrival",
+            "rating": 4.5,
+            "number_in_stock": 10
+        },
+        {
+            "title": "Product B",
+            "subtitle": "The perfect gift for any occasion",
+            "price": 29.99,
+            "status": "Out of stock",
+            "rating": 4.2,
+            "number_in_stock": 0
+        },
+        {
+            "title": "Product C",
+            "subtitle": "A must-have for your collection",
+            "price": 49.99,
+            "status": "In stock",
+            "rating": 4.8,
+            "number_in_stock": 5
+        },
+        {
+            "title": "Product C",
+            "subtitle": "A must-have for your collection",
+            "price": 49.99,
+            "status": "In stock",
+            "rating": 4.8,
+            "number_in_stock": 5
+        },
+        {
+            "title": "Product A",
+            "subtitle": "A great product for everyday use",
+            "price": 19.99,
+            "status": "In stock",
+            "rating": 4.5,
+            "number_in_stock": 10
+        },
+        {
+            "title": "Product B",
+            "subtitle": "The perfect gift for any occasion",
+            "price": 29.99,
+            "status": "Out of stock",
+            "rating": 4.2,
+            "number_in_stock": 0
+        },
+        {
+            "title": "Product C",
+            "subtitle": "A must-have for your collection",
+            "price": 49.99,
+            "status": "In stock",
+            "rating": 4.8,
+            "number_in_stock": 5
+        },
+        {
+            "title": "Product C",
+            "subtitle": "A must-have for your collection",
+            "price": 49.99,
+            "status": "In stock",
+            "rating": 4.8,
+            "number_in_stock": 5
+        }
+    ]
+}
