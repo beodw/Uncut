@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ item }) => {
   let isOutOfStock: boolean = item.status !== "New Arrival";
+
+  const navigate = useNavigate();
 
   return (
     <div className="group relative">
@@ -97,7 +100,10 @@ const Card = ({ item }) => {
           </div>
         </div>
         <div className="p-4 ">
-          <button className="bg-black text-white p-2 w-full">
+          <button
+            onClick={() => navigate("/shopping-cart")}
+            className="bg-black text-white p-2 w-full"
+          >
             Add to Cart
           </button>
         </div>

@@ -39,7 +39,7 @@ const SortBy = () => {
             >
               <Menu.Items className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
                 <div className="py-1">
-                  {sortByOptions.map((option) => (
+                  {sortByOptions.map((option, idx) => (
                     <Menu.Item key={option.name}>
                       {({ active }) => (
                         <a

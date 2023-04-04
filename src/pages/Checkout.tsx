@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="bg-white">
       <div className="relative z-40 lg:hidden" role="dialog" aria-modal="true">
@@ -18,13 +21,13 @@ const Checkout = () => {
                   className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                   stroke="currentColor"
                   aria-hidden="true"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
@@ -545,7 +548,6 @@ const Checkout = () => {
               <div className="flex flex-col">
                 <h2 className="mb-2">First Name</h2>
                 <input
-                  placeholder="Enter Coupon Code"
                   id="coupon-code"
                   type="text"
                   autoComplete="email"
@@ -556,7 +558,6 @@ const Checkout = () => {
               <div className="flex flex-col">
                 <h2 className="mb-2">Last Name</h2>
                 <input
-                  placeholder="Enter Coupon Code"
                   id="coupon-code"
                   type="text"
                   autoComplete="email"
@@ -564,6 +565,138 @@ const Checkout = () => {
                   className="w-full min-w-0 appearance-none border border-gray-300 bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500"
                 />
               </div>
+            </div>
+            <div className="w-full grid grid-cols-2 gap-2 justify-between mt-6">
+              <div className="flex flex-col">
+                <h2 className="mb-2">Email Address</h2>
+                <input
+                  id="coupon-code"
+                  type="text"
+                  autoComplete="email"
+                  required
+                  className="w-full min-w-0 appearance-none border border-gray-300 bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500"
+                />
+              </div>
+              <div className="flex flex-col">
+                <h2 className="mb-2">Phone Number</h2>
+                <input
+                  id="coupon-code"
+                  type="text"
+                  autoComplete="email"
+                  required
+                  className="w-full min-w-0 appearance-none border border-gray-300 bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500"
+                />
+              </div>
+            </div>
+            <div className="w-full justify-between mt-6">
+              <div className="flex flex-col">
+                <h2 className="mb-2">Address</h2>
+                <input
+                  placeholder="123 Main Street"
+                  id="address-input"
+                  type="text"
+                  autoComplete="email"
+                  required
+                  className="w-full min-w-0 appearance-none border border-gray-300 bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500"
+                />
+              </div>
+            </div>
+            <div className="w-full justify-between mt-6">
+              <div className="flex flex-col">
+                <h2 className="mb-2">Address 2 (Optional)</h2>
+                <input
+                  placeholder="Apartment or Suite"
+                  id="apartment-input"
+                  type="text"
+                  autoComplete="email"
+                  required
+                  className="w-full min-w-0 appearance-none border border-gray-300 bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500"
+                />
+              </div>
+            </div>
+
+            <div className="w-full justify-between mt-6">
+              <div className="flex flex-col">
+                <h2 className="mb-2">Town/City</h2>
+                <input
+                  id="town-city-input"
+                  type="text"
+                  autoComplete="email"
+                  required
+                  className="w-full min-w-0 appearance-none border border-gray-300 bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500"
+                />
+              </div>
+            </div>
+
+            <div className="w-full grid grid-cols-3 gap-2 justify-between mt-6">
+              <div className="flex flex-col">
+                <h2 className="mb-2">Country</h2>
+                <input
+                  id="country-input"
+                  type="text"
+                  autoComplete="email"
+                  required
+                  className="w-full min-w-0 appearance-none border border-gray-300 bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500"
+                />
+              </div>
+              <div className="flex flex-col">
+                <h2 className="mb-2">State</h2>
+                <input
+                  id="state-input"
+                  type="text"
+                  autoComplete="email"
+                  required
+                  className="w-full min-w-0 appearance-none border border-gray-300 bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500"
+                />
+              </div>
+              <div className="flex flex-col">
+                <h2 className="mb-2">Zip / Postcode</h2>
+                <input
+                  id="zip-code-input"
+                  type="text"
+                  autoComplete="email"
+                  required
+                  className="w-full min-w-0 appearance-none border border-gray-300 bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500"
+                />
+              </div>
+            </div>
+
+            <h1 className="my-8 font-bold text-2xl">Schedule Order Pick-up</h1>
+
+            <hr />
+
+            <div className="w-full justify-between mt-6 grid grid-cols-2 gap-2">
+              <div className="flex flex-col">
+                <h2 className="mb-2">Time</h2>
+                <input
+                  id="town-city-input"
+                  type="text"
+                  autoComplete="email"
+                  required
+                  className="w-full min-w-0 appearance-none border border-gray-300 bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500"
+                />
+              </div>
+              <div className="flex flex-col">
+                <h2 className="mb-2">Date</h2>
+                <input
+                  id="town-city-input"
+                  type="text"
+                  autoComplete="email"
+                  required
+                  className="w-full min-w-0 appearance-none border border-gray-300 bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500"
+                />
+              </div>
+            </div>
+
+            <textarea
+              className="border w-full my-8 h-32 resize-none outline-green-600 outline-[1px] p-2"
+              placeholder="blah blah blah blah and marketing emails"
+            />
+
+            <div className="w-full justify-end items-center flex">
+              <button className="bg-green-600 text-white w-1/2 py-2">
+                Place Order
+              </button>
             </div>
           </section>
           <section
@@ -577,8 +710,33 @@ const Checkout = () => {
               >
                 Order summary
               </h2>
+
+              <hr />
+
+              {[1, 2, 3, 4].map((item, idx) => (
+                <div
+                  key={idx}
+                  className="border mt-4 p-4 flex items-start justify-start w-full bg-green-500"
+                >
+                  <img
+                    src="./img1.jpg"
+                    alt="TODO"
+                    className="h-full w-24 object-cover object-center mr-2"
+                  />
+                  <div className="flex flex-col bg-red-400">
+                    <p className="mb-2">Jelly Donut Holes (4 Pack)</p>
+                    <p className="mb-2 text-gray-500 text-sm">Weight: 100mg</p>
+                    <p className="mb-2 text-gray-500 text-sm">
+                      Category: Bakery
+                    </p>
+                    <p className="mb-2 text-gray-500 text-sm">Quantity: 1</p>
+                  </div>
+                </div>
+              ))}
+
+              <hr />
               <div className="border-b-[1px] py-4">
-                <form className="mt-2 flex sm:max-w-md">
+                <div className="mt-2 flex sm:max-w-md">
                   <label htmlFor="email-address" className="sr-only">
                     Email address
                   </label>
@@ -598,7 +756,7 @@ const Checkout = () => {
                       Apply
                     </button>
                   </div>
-                </form>
+                </div>
               </div>
 
               <dl className="mt-6 space-y-4">
@@ -623,9 +781,9 @@ const Checkout = () => {
                         aria-hidden="true"
                       >
                         <path
-                          fill-rule="evenodd"
+                          fillRule="evenodd"
                           d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.94a.75.75 0 11-1.061-1.061 3 3 0 112.871 5.026v.345a.75.75 0 01-1.5 0v-.5c0-.72.57-1.172 1.081-1.287A1.5 1.5 0 108.94 6.94zM10 15a1 1 0 100-2 1 1 0 000 2z"
-                          clip-rule="evenodd"
+                          clipRule="evenodd"
                         />
                       </svg>
                     </a>
@@ -649,9 +807,9 @@ const Checkout = () => {
                         aria-hidden="true"
                       >
                         <path
-                          fill-rule="evenodd"
+                          fillRule="evenodd"
                           d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.94a.75.75 0 11-1.061-1.061 3 3 0 112.871 5.026v.345a.75.75 0 01-1.5 0v-.5c0-.72.57-1.172 1.081-1.287A1.5 1.5 0 108.94 6.94zM10 15a1 1 0 100-2 1 1 0 000 2z"
-                          clip-rule="evenodd"
+                          clipRule="evenodd"
                         />
                       </svg>
                     </a>
@@ -669,6 +827,7 @@ const Checkout = () => {
               </dl>
               <div className="mt-6">
                 <button
+                  onClick={() => navigate("/orders")}
                   type="submit"
                   className="w-full rounded-md border border-transparent bg-green-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-50"
                 >
